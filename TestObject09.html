@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+      .teamslider{
+        height:100%;
+      width:30%;
+      }
+      .slider-wrap{
+        position:relative;
+        overflow: hidden;
+        height:24rem;
+      
+      }
+      .slider-main{
+        position:absolute;
+        width:20%;
+      }
+      .item{
+        width:14rem;
+        display:inline-block;
+        background-color: red;
+        position:relative;
+        height:20rem;
+        margin-top:4rem;
+        margin-left:5rem;
+      }
+      .text{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+        font-size:20px;
+        color:white;
+        font-weight:bolder;
+      }
+      .btn-area{
+        position: absolute;
+        bottom: -2rem;
+        left: 76%;
+      }
+      .slide-btn{
+        border:none;
+        outline:none;
+        font-size:24px;
+        color:#fff;
+        border-radius: 50%;
+        padding:2px 15px;
+        background:#9d1a1a;
+        transition:0.4s;
+      }
+      .slide-btn:hover{
+        background-color: white;
+        color:#9d1a1a;
+      }
+      
+      </style>
+</head>
+<body>
+    <div class="teamslider ">
+        <div class="container-fluid">
+            <div class="btn-area">
+                <button type="button" class="slide-btn" onclick="prev()"><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+                <button type="button" class="slide-btn" onclick="next()"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+            </div>
+            <div class="slider-wrap">
+                <div class="slider-main" id="slider-main">
+                    <div class="item">
+                        <div class="text">1</div>
+                    </div>
+                    <div class="item">
+                        <div class="text">2</div>
+                    </div>
+                    <div class="item">
+                        <div class="text">3</div>
+                    </div>
+                    <div class="item">
+                        <div class="text">4</div>
+                    </div>
+                    <div class="item">
+                        <div class="text">5</div>
+                    </div>
+                    <div class="item">
+                        <div class="text">6</div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    <script>
+        var sliderMain = document.getElementById("slider-main");
+var item = sliderMain.getElementsByClassName("item");
+
+function next(){
+    sliderMain.append(item[0]);
+} 
+
+function prev(){
+sliderMain.prepend(item[item.length - 1])
+}
+    </script>
+    
+</body>
+</html>
